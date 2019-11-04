@@ -9,6 +9,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let label = UILabel(frame: .zero)
+    let messageManager = MessageManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +17,7 @@ class ViewController: UIViewController {
         
         label.text = "loading"
         
-        loadMessage { combinedMessage in
+        messageManager.loadMessage { (combinedMessage) in
             self.label.text = combinedMessage
         }
     }
